@@ -1,5 +1,6 @@
 import React from 'react';
 import css from './Statistics.module.css';
+import PropTypes from 'prop-types';
 
 const Statistics = ({ onGood, onNeutral, onBad, onTotal, onPositive }) => {
   return (
@@ -24,6 +25,14 @@ const Statistics = ({ onGood, onNeutral, onBad, onTotal, onPositive }) => {
       </p>
     </>
   );
+};
+
+Statistics.propTypes = {
+  onGood: PropTypes.number.isRequired,
+  onNeutral: PropTypes.number.isRequired,
+  onBad: PropTypes.number.isRequired,
+  onTotal: PropTypes.number.isRequired,
+  onPositive: PropTypes.number.isRequired,
 };
 
 export default Statistics;
