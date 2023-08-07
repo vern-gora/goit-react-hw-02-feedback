@@ -1,16 +1,16 @@
 import React from 'react';
 import css from './Feedback.module.css';
-import PropTypes from 'prop-types';
+import PropTypes, { string } from 'prop-types';
 
 const Feedback = ({ options, onLeaveFeedback }) => {
   return (
     <section className={css.feedback}>
-      {options.map((option, index) => {
+      {options.map(option => {
         return (
           <button
             type="button"
             onClick={() => onLeaveFeedback(option)}
-            key={index}
+            key={option}
           >
             {option}
           </button>
@@ -21,7 +21,7 @@ const Feedback = ({ options, onLeaveFeedback }) => {
 };
 
 Feedback.propTypes = {
-  options: PropTypes.array.isRequired,
+  options: PropTypes.arrayOf(string).isRequired,
   onLeaveFeedback: PropTypes.func.isRequired,
 };
 
